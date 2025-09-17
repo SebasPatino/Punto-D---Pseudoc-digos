@@ -1,0 +1,202 @@
+:root {
+    --color-primario: #2e6dcc;
+    --color-secundario: #ffffff;
+    --color-texto: #000000;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --espaciado: 1rem;
+    --radio: 8px;
+    --fuente: 'Times New Roman', Times, Serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    background: var(--color-secundario);
+    color: var(--color-texto);
+    display: flex;
+}
+
+.sidebar {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding-top: var(--espaciado);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav li {
+    margin: 1.5rem 0;
+}
+
+.sidebar nav a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar nav a:hover {
+    text-decoration: underline;
+}
+
+.contenido {
+    margin-left: 80px;
+    display: flex;
+    padding: var(--espaciado);
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.contenido::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mensaje {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    background-color: var(--color-secundario);
+    padding: 2rem;
+    border-radius: var(--radio);
+    box-shadow: 0 0 10px var(--sombra);
+    position: relative;
+    overflow: hidden;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+}
+
+.mensaje::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: var(--radio);
+}
+
+.mensaje h1, .mensaje p, .botones {
+    position: relative;
+    z-index: 1;
+}
+
+.mensaje h1 {
+    color:#001553;
+    margin-bottom: 1rem;
+    font-size: 50px;
+    font-style: oblique;
+}
+
+
+.mensaje::before {
+    content: "🌐";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 2rem;
+}
+
+.botones {
+    margin-top: 2rem;
+}
+
+.btn{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    border-radius: var(--radio);
+    padding: 0.8rem 1.2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #27a7ae;
+    color: #000000;
+}
+
+.formulario {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    float: left;
+    width: 48%;
+}
+
+.formulario h2 {
+    color: #001553;
+    margin-bottom: 1rem;
+    font-size: 30px;
+}
+
+form label {
+  display: block;
+  margin-top: var(--espaciado);
+  font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radio);
+}
+
+input:required {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-color: var(--color-primario);
+    outline: none;
+}
+
+form button {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 0.7rem;
+    border: none;
+    border-radius: var(--radio);
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+form button:hover {
+    background-color: #27a0ae;
+    color: #000000;
+}
+
+.contacto {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-primario);
+    padding: 0.5rem 1rem;
+    border-radius: 1000%;
+    font-weight: bold;
+}
